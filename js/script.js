@@ -18,3 +18,8 @@ window.speechSynthesis.onvoiceschanged = () => {
 
     voices.forEach((voice, i) => (voiceSelect.options[i]= new Option(voice.name,i)));
 };
+
+//! Cambio di voce a partire dal select
+voiceSelect.addEventListener("change", () => {
+    speech.voice = voices[voiceSelect.value];
+});
